@@ -20,8 +20,8 @@ app.post("/",function(req,res){
     const fName = req.body.fname
     const lName = req.body.lname
     const eMail = req.body.email
-    const myKey ="e57051f5ac7cd27ca99a45c9d7e1e6ff-us10"
-    const iD = "4f3192fc86"
+    const myKey ="45866b4a4396c5f09259f4d40590f43e-us13"
+    const iD = "8843f5d23d"
     const data = {
         members:[
             {
@@ -35,7 +35,7 @@ app.post("/",function(req,res){
         ]
     }
     const jsonData = JSON.stringify(data)
-    const url = "https://us10.api.mailchimp.com/3.0/lists/"+iD
+    const url = "https://us13.api.mailchimp.com/3.0/lists/"+iD
     const options = {
         method:"POST",
         auth:"som3a:"+myKey
@@ -60,7 +60,7 @@ app.post("/failure",function(req,res){
 })
 
 // listen to my app port
-port = process.env.PORT
+port = process.env.PORT || 4120
 app.listen(port,function(){
     console.log("Our server is started: "+port)
 })
